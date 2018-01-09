@@ -53,8 +53,15 @@ extension TWProductListViewController: UICollectionViewDelegate {
 }
 
 extension TWProductListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.categories?.count ?? 0
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let category = viewModel.categories?[section]
+        guard let cat = category, let prodArray = viewModel.productsDict?[cat] else {
+            return 0
+        }
+        return prodArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
