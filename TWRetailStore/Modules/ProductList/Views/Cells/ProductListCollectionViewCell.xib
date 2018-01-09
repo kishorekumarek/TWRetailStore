@@ -70,6 +70,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="259" height="415"/>
+            <connections>
+                <outlet property="priceLabel" destination="KvO-4L-F7M" id="w5w-um-Bw5"/>
+                <outlet property="productDescLabel" destination="anX-4v-GdC" id="ZqW-D3-7s4"/>
+                <outlet property="productImageView" destination="PxD-ss-MH6" id="BOP-2K-HmQ"/>
+                <outlet property="productNameLabel" destination="n7m-IM-wkG" id="beE-CA-7L4"/>
+            </connections>
             <point key="canvasLocation" x="-70.5" y="45.5"/>
         </collectionViewCell>
     </objects>
