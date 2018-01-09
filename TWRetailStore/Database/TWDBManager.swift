@@ -133,11 +133,12 @@ class TWDBManager {
         productMO?.price = product[ProductConstants.price]
         productMO?.productDescription = product[ProductConstants.productDescription]
         productMO?.productName = product[ProductConstants.productName]
+        productMO?.image = product[ProductConstants.productImage]
         product[ProductConstants.categoryID].map({
             var category = getCategory(categoryId: $0, moc: moc)
             if category == nil {
                 category = getNewManagedObject(name: DBConstants.categoryMO, moc: moc) as? Category
-                category?.catId = $0
+                category?.categoryId = $0
             }
             productMO?.category = category
         })

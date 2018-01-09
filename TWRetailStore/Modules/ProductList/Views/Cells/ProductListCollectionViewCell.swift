@@ -9,14 +9,19 @@
 import UIKit
 
 class ProductListCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var productImageView: UIImageView?
-    @IBOutlet weak var productNameLabel: UILabel?
-    @IBOutlet weak var productDescLabel: UILabel?
-    @IBOutlet weak var priceLabel: UILabel?
+    @IBOutlet private weak var productImageView: UIImageView?
+    @IBOutlet private weak var productNameLabel: UILabel?
+    @IBOutlet private weak var productDescLabel: UILabel?
+    @IBOutlet private weak var priceLabel: UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func configure(product: Product?) {
+        productImageView?.image = UIImage(named: product?.image ?? "")
+        productNameLabel?.text = product?.productName
+        priceLabel?.text = "Rs.\(product?.price ?? "0")"
+    }
 }

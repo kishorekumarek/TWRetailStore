@@ -9,16 +9,25 @@
 import Foundation
 
 class TWProductListViewModel {
-    var products: [Product]?
+    var categories: [Category]?
+    var productsDict: [Category: [Product]]?
     func loadProductData(onSuccess: () -> Void, onError: (String) -> Void) {
-
-        TWDataManager.loadProductData(onSucess: { [weak self] (products) in
-            self?.products = products
+        TWDataManager.loadProductData(onSucess: { [weak self] (categories) in
+            self?.categories = categories
             onSuccess()
         }) {(errorMessage) in
             onError(errorMessage)
         }
-        
+    }
+
+    private func updateProductsDict() {
+        guard let cats = categories else {
+            return
+        }
+        productsDict = [:]
+        for category in cats {
+            productsDict?[category] = category.products?.allObjects as? [Product]
+        }
     }
 
 }

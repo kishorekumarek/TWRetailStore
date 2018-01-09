@@ -9,7 +9,7 @@
 import Foundation
 
 class TWDataManager {
-    class func loadProductData(onSucess: ([Product]) -> Void, onError: (String) -> Void) {
+    class func loadProductData(onSucess: ([Category]) -> Void, onError: (String) -> Void) {
         do {
             guard let file = Bundle.main.url(forResource: "products", withExtension: "json") else {
                 return
@@ -19,15 +19,12 @@ class TWDataManager {
                 onError("error in json parsing")
                 return
             }
-            let _ = (jsonDict["categories"] as? [[String: String]]).map(updateCategoriessInDb(catArray:))
+            let categories = (jsonDict["categories"] as? [[String: String]]).map(updateCategoriessInDb(catArray:))
 
-            if let products = jsonDict["products"] as? [[String: String]] {
-                onSucess(updateProductsInDb(productsArray: products))
-            } else {
-                onError("error in json parsing")
-            }
+            let _ = (jsonDict["products"] as? [[String: String]]).map(updateProductsInDb(productsArray:))
+            categories.map(onSucess)
         } catch {
-
+            onError("error in json parsing")
         }
     }
     private class func updateCategoriessInDb(catArray: [[String: String]]) -> [Category] {
