@@ -11,10 +11,29 @@ import Foundation
 class TWDataManager {
     class func loadProductData(onSucess: ([Product]) -> Void, onError: (String) -> Void) {
         do {
-            let jsonPath = Bundle.main.path(forResource: "products", ofType: "json")
-            let url = URL(fileURLWithPath: jsonPath!)
-            let data = try Data(contentsOf: url, options: .mappedRead)
-            let jsonDict = try JSONSerialization.jsonObject(with: data, options: nil)
+            guard let file = Bundle.main.url(forResource: "products", withExtension: "json") else {
+                return
+            }
+            let data = try Data(contentsOf: file)
+            guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                // appropriate error handling
+                return
+            }
+            print("jsonDict: \(jsonDict)")
+            print("name: \(String(describing: jsonDict["categories"]))")
+            // Convert json to domain objects, use if needed
+            /* do {
+             let data = try Data(contentsOf: file)
+             let decoder = JSONDecoder()
+             let product = try decoder.decode([ProductModel].self, from: data)
+             // onSucess(product)
+             print(product)
+             } catch {
+             print("Error Parsing")
+             } */
+
+        } catch {
+
         }
     }
 }
