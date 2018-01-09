@@ -1,0 +1,56 @@
+{
+  "products": [
+    {
+      "name": "Microwave Oven",
+      "image": "microwaveOven.png",
+      "description": "Bake scrumptious and healthy dishes instantly in the Panasonic NN-ST266BFDG Solo Microwave. This 20 L microwave allows you to cook food efficiently owing to its multistage cooking mechanism and five power levels. Its child-lock feature ensures safety. Make the most of its 51 auto-cook menus and whip up tasty dishes without any hassle.",
+      "catId": "1",
+      "price": "11270"
+    },
+    {
+      "name": "Television",
+      "image": "television.png",
+      "description": "Since the evolution of the TV, man has been fascinated by the device. After CRT TV’s Thin tubes are ruling the market today. This Thomson 32HDL815LF33 31.5 inch LED HD-Ready TV features a 31.5 Inch, LED, HD-Ready, 1366x768 display for your viewing pleasure. The Aspect Ratio of this screen is 16 : 9 to meet the latest standards and consumes 55 W as power (when running). Other features of this TV include . Also, the total speaker output of this TV is 16 W.",
+      "catId": "1",
+      "price": "13450"
+    },
+    {
+      "name": "Vaccum Clear",
+      "image": "vaccumCleaner.png",
+      "description": "Lightweight and compact, the Bissell 1273K 1500W Easy Cylinder Bagless Vacuum Cleaner, Red/Black offers exceptional cleaning of your household floors. When switched on, this vacuum cleaner uses a powerful cyclonic action that sucks up every speck of dust. Adding to your convenience, this vacuum cleaner is bagless, so you need not to replace it at regular intervals. You can also clean carpets and rugs with this cleaner.",
+      "catId": "1",
+      "price": "8340"
+    },
+    {
+      "name": "Table",
+      "image": "table.png",
+      "description": "High in style quotient yet small in dimensions. If you want a space saver solution for your home decor, then the Vinessa Coffee Table should be your choice. Its simple yet creative design enables you to have a cup of coffee with friends and family.",
+      "catId": "2",
+      "price": "4320"
+    },
+    {
+      "name": "Chair",
+      "image": "chair.png",
+      "description": "Naturally you're proud of your home, so of course, you must have quality dining chairs that are pleasing on the eye. With it's clean lines, and Classic 'Black' Hardware This versatile Mid Century Modern chair will not just conform to your décor, but will enhance it, and bring space with it's clean lines, and iconic charm.",
+      "catId": "2",
+      "price": "2130"
+    },
+    {
+      "name": "Almirah",
+      "image": "almirah.png",
+      "description": "This portable wardrobe is a great storage unit to keep your bedroom neat and tidy. Need extra space for your clothes? This double wardrobe with non-woven cloth cover is an absolutely ideal solution for storing clothes, shoes, books, toys and more! Perfect for any bedroom and comes with a non-woven cloth cover that not only offers a great look but also a fabulous way to hide any unsightly mess.",
+      "catId": "2",
+      "price": "7560"
+    }
+  ],
+  "categories": [
+    {
+      "catName": "Electronics",
+      "catId": "1"
+    },
+    {
+      "catName": "Furniture",
+      "catId": "2"
+    }
+  ]
+}

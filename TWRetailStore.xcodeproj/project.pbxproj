@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C020262F1FFD31F400AA99F9 /* TWDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C020262E1FFD31F400AA99F9 /* TWDBManager.swift */; };
+		C02026311FFD344000AA99F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C02026301FFD344000AA99F9 /* Default-568h@2x.png */; };
 		C09E016C1FFC2CD100521470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E016B1FFC2CD100521470 /* AppDelegate.swift */; };
 		C09E016E1FFC2CD100521470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E016D1FFC2CD100521470 /* ViewController.swift */; };
 		C09E01711FFC2CD100521470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09E016F1FFC2CD100521470 /* Main.storyboard */; };
@@ -15,6 +17,12 @@
 		C09E01791FFC2CD100521470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09E01771FFC2CD100521470 /* LaunchScreen.storyboard */; };
 		C09E01841FFC2CD100521470 /* TWRetailStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E01831FFC2CD100521470 /* TWRetailStoreTests.swift */; };
 		C09E018F1FFC2CD100521470 /* TWRetailStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09E018E1FFC2CD100521470 /* TWRetailStoreUITests.swift */; };
+		C0CBF2EF2000A29100BCFA76 /* TWProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CBF2EE2000A29100BCFA76 /* TWProductListViewController.swift */; };
+		C0CBF2F52000A33000BCFA76 /* ProductListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CBF2F32000A33000BCFA76 /* ProductListCollectionViewCell.swift */; };
+		C0CBF2F62000A33000BCFA76 /* ProductListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CBF2F42000A33000BCFA76 /* ProductListCollectionViewCell.xib */; };
+		C0CBF2F82000A57700BCFA76 /* TWProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CBF2F72000A57700BCFA76 /* TWProductListViewModel.swift */; };
+		C0CBF2FB2003FEFA00BCFA76 /* TWDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CBF2FA2003FEFA00BCFA76 /* TWDataManager.swift */; };
+		C0CBF2FD2003FF7E00BCFA76 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = C0CBF2FC2003FF7E00BCFA76 /* products.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C020262E1FFD31F400AA99F9 /* TWDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWDBManager.swift; sourceTree = "<group>"; };
+		C02026301FFD344000AA99F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C09E01681FFC2CD100521470 /* TWRetailStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWRetailStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09E016B1FFC2CD100521470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C09E016D1FFC2CD100521470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +59,12 @@
 		C09E018A1FFC2CD100521470 /* TWRetailStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWRetailStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09E018E1FFC2CD100521470 /* TWRetailStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWRetailStoreUITests.swift; sourceTree = "<group>"; };
 		C09E01901FFC2CD100521470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0CBF2EE2000A29100BCFA76 /* TWProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWProductListViewController.swift; sourceTree = "<group>"; };
+		C0CBF2F32000A33000BCFA76 /* ProductListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0CBF2F42000A33000BCFA76 /* ProductListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCollectionViewCell.xib; sourceTree = "<group>"; };
+		C0CBF2F72000A57700BCFA76 /* TWProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWProductListViewModel.swift; sourceTree = "<group>"; };
+		C0CBF2FA2003FEFA00BCFA76 /* TWDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWDataManager.swift; sourceTree = "<group>"; };
+		C0CBF2FC2003FF7E00BCFA76 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +92,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C02026291FFD30DE00AA99F9 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C09E01721FFC2CD100521470 /* TWRetailStore.xcdatamodeld */,
+				C020262E1FFD31F400AA99F9 /* TWDBManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		C020262A1FFD30EA00AA99F9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2FA2003FEFA00BCFA76 /* TWDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C020262C1FFD310700AA99F9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C09E016F1FFC2CD100521470 /* Main.storyboard */,
+				C09E01771FFC2CD100521470 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C020262D1FFD314A00AA99F9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2FC2003FF7E00BCFA76 /* products.json */,
+				C09E017A1FFC2CD100521470 /* Info.plist */,
+				C09E016B1FFC2CD100521470 /* AppDelegate.swift */,
+				C09E01751FFC2CD100521470 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		C09E015F1FFC2CD100521470 = {
 			isa = PBXGroup;
 			children = (
+				C02026301FFD344000AA99F9 /* Default-568h@2x.png */,
 				C09E016A1FFC2CD100521470 /* TWRetailStore */,
 				C09E01821FFC2CD100521470 /* TWRetailStoreTests */,
 				C09E018D1FFC2CD100521470 /* TWRetailStoreUITests */,
@@ -99,13 +153,11 @@
 		C09E016A1FFC2CD100521470 /* TWRetailStore */ = {
 			isa = PBXGroup;
 			children = (
-				C09E016B1FFC2CD100521470 /* AppDelegate.swift */,
-				C09E016D1FFC2CD100521470 /* ViewController.swift */,
-				C09E016F1FFC2CD100521470 /* Main.storyboard */,
-				C09E01751FFC2CD100521470 /* Assets.xcassets */,
-				C09E01771FFC2CD100521470 /* LaunchScreen.storyboard */,
-				C09E017A1FFC2CD100521470 /* Info.plist */,
-				C09E01721FFC2CD100521470 /* TWRetailStore.xcdatamodeld */,
+				C020262D1FFD314A00AA99F9 /* SupportingFiles */,
+				C020262C1FFD310700AA99F9 /* Storyboards */,
+				C0CBF2E820009A9700BCFA76 /* Modules */,
+				C020262A1FFD30EA00AA99F9 /* Managers */,
+				C02026291FFD30DE00AA99F9 /* Database */,
 			);
 			path = TWRetailStore;
 			sourceTree = "<group>";
@@ -126,6 +178,90 @@
 				C09E01901FFC2CD100521470 /* Info.plist */,
 			);
 			path = TWRetailStoreUITests;
+			sourceTree = "<group>";
+		};
+		C0CBF2E820009A9700BCFA76 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2EB2000A11500BCFA76 /* Cart */,
+				C0CBF2EC2000A12200BCFA76 /* Login */,
+				C0CBF2EA2000A10400BCFA76 /* ProductDetail */,
+				C0CBF2E92000A0F500BCFA76 /* ProductList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C0CBF2E92000A0F500BCFA76 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2F12000A2D400BCFA76 /* Views */,
+				C0CBF2F02000A29700BCFA76 /* ViewControllers */,
+				C0CBF2F92000A57C00BCFA76 /* ViewModel */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		C0CBF2EA2000A10400BCFA76 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		C0CBF2EB2000A11500BCFA76 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		C0CBF2EC2000A12200BCFA76 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2ED2000A16B00BCFA76 /* ViewControllers */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C0CBF2ED2000A16B00BCFA76 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C09E016D1FFC2CD100521470 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C0CBF2F02000A29700BCFA76 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2EE2000A29100BCFA76 /* TWProductListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C0CBF2F12000A2D400BCFA76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2F22000A2E900BCFA76 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0CBF2F22000A2E900BCFA76 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2F32000A33000BCFA76 /* ProductListCollectionViewCell.swift */,
+				C0CBF2F42000A33000BCFA76 /* ProductListCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C0CBF2F92000A57C00BCFA76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2F72000A57700BCFA76 /* TWProductListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +372,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C09E01791FFC2CD100521470 /* LaunchScreen.storyboard in Resources */,
+				C02026311FFD344000AA99F9 /* Default-568h@2x.png in Resources */,
+				C0CBF2F62000A33000BCFA76 /* ProductListCollectionViewCell.xib in Resources */,
+				C0CBF2FD2003FF7E00BCFA76 /* products.json in Resources */,
 				C09E01761FFC2CD100521470 /* Assets.xcassets in Resources */,
 				C09E01711FFC2CD100521470 /* Main.storyboard in Resources */,
 			);
@@ -262,9 +401,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C020262F1FFD31F400AA99F9 /* TWDBManager.swift in Sources */,
+				C0CBF2F82000A57700BCFA76 /* TWProductListViewModel.swift in Sources */,
 				C09E01741FFC2CD100521470 /* TWRetailStore.xcdatamodeld in Sources */,
 				C09E016E1FFC2CD100521470 /* ViewController.swift in Sources */,
 				C09E016C1FFC2CD100521470 /* AppDelegate.swift in Sources */,
+				C0CBF2F52000A33000BCFA76 /* ProductListCollectionViewCell.swift in Sources */,
+				C0CBF2FB2003FEFA00BCFA76 /* TWDataManager.swift in Sources */,
+				C0CBF2EF2000A29100BCFA76 /* TWProductListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +576,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5A39YL8G62;
-				INFOPLIST_FILE = TWRetailStore/Info.plist;
+				INFOPLIST_FILE = TWRetailStore/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swift.TWRetailStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,7 +591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5A39YL8G62;
-				INFOPLIST_FILE = TWRetailStore/Info.plist;
+				INFOPLIST_FILE = TWRetailStore/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swift.TWRetailStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
