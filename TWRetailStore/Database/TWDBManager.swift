@@ -140,6 +140,7 @@ class TWDBManager {
                 category = getNewManagedObject(name: DBConstants.categoryMO, moc: moc) as? Category
                 category?.categoryId = $0
             }
+//            productMO.map({category?.addToProducts($0)})
             productMO?.category = category
         })
         return productMO

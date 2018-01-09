@@ -14,6 +14,7 @@ class TWProductListViewModel {
     func loadProductData(onSuccess: () -> Void, onError: (String) -> Void) {
         TWDataManager.loadProductData(onSucess: { [weak self] (categories) in
             self?.categories = categories
+            self?.updateProductsDict()
             onSuccess()
         }) {(errorMessage) in
             onError(errorMessage)
