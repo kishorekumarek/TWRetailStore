@@ -9,10 +9,32 @@
 import Foundation
 import CoreData
 
+enum ContextType {
+    case mainContext
+    case privateContext
+}
+
 class TWDBManager {
-    static var dbManager = TWDBManager()
+    static var sharedManager = TWDBManager()
     // MARK: - Core Data stack
 
+    func getMoc(type: ContextType) -> NSManagedObjectContext {
+        switch type {
+        case .mainContext:
+            return mainContext
+        default:
+            return privateContext
+        }
+    }
+
+    private lazy var mainContext: NSManagedObjectContext = {
+        return persistentContainer.viewContext
+    }()
+
+    private lazy var privateContext: NSManagedObjectContext = {
+        return persistentContainer.newBackgroundContext()
+    }()
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -56,4 +78,83 @@ class TWDBManager {
         }
     }
 
+    func getNewManagedObject(name: String,
+                             moc: NSManagedObjectContext) -> NSManagedObject {
+        let mo = NSEntityDescription.insertNewObject(forEntityName: name, into: moc)
+        return mo
+    }
+
+    func getProduct(productId: String,
+                    moc: NSManagedObjectContext) -> Product? {
+        var fetchedProduct: Product?
+        let fetchRequest = NSFetchRequest<Product>(entityName: String(describing: Product.self))
+        let predicate = NSPredicate(format: "productId = %@", productId)
+        fetchRequest.predicate = predicate
+        do {
+            let result = try moc.fetch(fetchRequest)
+            if result.isEmpty == false {
+                fetchedProduct = result.first
+            }
+        } catch {
+            print("fetch error")
+        }
+        return fetchedProduct
+    }
+
+    func getCategory(categoryId: String,
+                     moc: NSManagedObjectContext) -> Category? {
+        var fetchedCategory: Category?
+        let fetchRequest = NSFetchRequest<Category>(entityName: String(describing: Category.self))
+        let predicate = NSPredicate(format: "categoryId = %@", categoryId)
+        fetchRequest.predicate = predicate
+        do {
+            let result = try moc.fetch(fetchRequest)
+            if result.isEmpty == false {
+                fetchedCategory = result.first
+            }
+        } catch {
+            print("fetch error")
+        }
+        return fetchedCategory
+    }
+
+    func addOrUpdateProduct(product: [String: String]) -> Product? {
+        guard let productId = product[ProductConstants.productID] else {
+            return nil
+        }
+
+        let moc = TWDBManager.sharedManager.getMoc(type: .mainContext)
+        var productMO = TWDBManager.sharedManager.getProduct(productId: productId,
+                                                             moc: moc)
+        if productMO == nil {
+            productMO = TWDBManager.sharedManager.getNewManagedObject(name: DBConstants.productMO, moc: moc) as? Product
+        }
+        productMO?.productId = product[ProductConstants.productID]
+        productMO?.price = product[ProductConstants.price]
+        productMO?.productDescription = product[ProductConstants.productDescription]
+        productMO?.productName = product[ProductConstants.productName]
+        product[ProductConstants.categoryID].map({
+            var category = getCategory(categoryId: $0, moc: moc)
+            if category == nil {
+                category = getNewManagedObject(name: DBConstants.categoryMO, moc: moc) as? Category
+                category?.catId = $0
+            }
+            productMO?.category = category
+        })
+        return productMO
+    }
+
+    func addOrUpdateCategory(category: [String: String]) -> Category? {
+        guard let catId = category[CategoryConstants.categoryID] else {
+            return nil
+        }
+
+        let moc = TWDBManager.sharedManager.getMoc(type: .mainContext)
+        var catMO = TWDBManager.sharedManager.getCategory(categoryId: catId, moc: moc)
+        if catMO == nil {
+            catMO = TWDBManager.sharedManager.getNewManagedObject(name: DBConstants.categoryMO, moc: moc) as? Category
+        }
+        catMO?.categoryName = category[CategoryConstants.categoryName]
+        return catMO
+    }
 }

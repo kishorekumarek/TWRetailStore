@@ -9,9 +9,16 @@
 import Foundation
 
 class TWProductListViewModel {
+    var products: [Product]?
+    func loadProductData(onSuccess: () -> Void, onError: (String) -> Void) {
 
-    func loadProductData() {
-
+        TWDataManager.loadProductData(onSucess: { [weak self] (products) in
+            self?.products = products
+            onSuccess()
+        }) {(errorMessage) in
+            onError(errorMessage)
+        }
+        
     }
 
 }

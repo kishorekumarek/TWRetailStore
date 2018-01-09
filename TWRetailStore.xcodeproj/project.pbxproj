@@ -23,6 +23,7 @@
 		C0CBF2F82000A57700BCFA76 /* TWProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CBF2F72000A57700BCFA76 /* TWProductListViewModel.swift */; };
 		C0CBF2FB2003FEFA00BCFA76 /* TWDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CBF2FA2003FEFA00BCFA76 /* TWDataManager.swift */; };
 		C0CBF2FD2003FF7E00BCFA76 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = C0CBF2FC2003FF7E00BCFA76 /* products.json */; };
+		C0CBF30020053B8D00BCFA76 /* TWConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CBF2FF20053B8D00BCFA76 /* TWConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C0CBF2F72000A57700BCFA76 /* TWProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWProductListViewModel.swift; sourceTree = "<group>"; };
 		C0CBF2FA2003FEFA00BCFA76 /* TWDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWDataManager.swift; sourceTree = "<group>"; };
 		C0CBF2FC2003FF7E00BCFA76 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		C0CBF2FF20053B8D00BCFA76 /* TWConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		C09E016A1FFC2CD100521470 /* TWRetailStore */ = {
 			isa = PBXGroup;
 			children = (
+				C0CBF2FE20053B7700BCFA76 /* Common */,
 				C020262D1FFD314A00AA99F9 /* SupportingFiles */,
 				C020262C1FFD310700AA99F9 /* Storyboards */,
 				C0CBF2E820009A9700BCFA76 /* Modules */,
@@ -262,6 +265,14 @@
 				C0CBF2F72000A57700BCFA76 /* TWProductListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0CBF2FE20053B7700BCFA76 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBF2FF20053B8D00BCFA76 /* TWConstants.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,6 +414,7 @@
 			files = (
 				C020262F1FFD31F400AA99F9 /* TWDBManager.swift in Sources */,
 				C0CBF2F82000A57700BCFA76 /* TWProductListViewModel.swift in Sources */,
+				C0CBF30020053B8D00BCFA76 /* TWConstants.swift in Sources */,
 				C09E01741FFC2CD100521470 /* TWRetailStore.xcdatamodeld in Sources */,
 				C09E016E1FFC2CD100521470 /* ViewController.swift in Sources */,
 				C09E016C1FFC2CD100521470 /* AppDelegate.swift in Sources */,

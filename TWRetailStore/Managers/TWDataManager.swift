@@ -16,24 +16,36 @@ class TWDataManager {
             }
             let data = try Data(contentsOf: file)
             guard let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                // appropriate error handling
+                onError("error in json parsing")
                 return
             }
-            print("jsonDict: \(jsonDict)")
-            print("name: \(String(describing: jsonDict["categories"]))")
-            // Convert json to domain objects, use if needed
-            /* do {
-             let data = try Data(contentsOf: file)
-             let decoder = JSONDecoder()
-             let product = try decoder.decode([ProductModel].self, from: data)
-             // onSucess(product)
-             print(product)
-             } catch {
-             print("Error Parsing")
-             } */
+            let _ = (jsonDict["categories"] as? [[String: String]]).map(updateCategoriessInDb(catArray:))
 
+            if let products = jsonDict["products"] as? [[String: String]] {
+                onSucess(updateProductsInDb(productsArray: products))
+            } else {
+                onError("error in json parsing")
+            }
         } catch {
 
         }
+    }
+    private class func updateCategoriessInDb(catArray: [[String: String]]) -> [Category] {
+        var categories: [Category] = []
+        for category in catArray {
+            let categoryMO = TWDBManager.sharedManager.addOrUpdateCategory(category: category)
+            categoryMO.map({categories.append($0)})
+        }
+        return categories
+    }
+
+    private class func updateProductsInDb(productsArray: [[String: String]]) -> [Product] {
+        var products: [Product] = []
+        for product in productsArray {
+            let productMo = TWDBManager.sharedManager.addOrUpdateProduct(product: product)
+            productMo.map({products.append($0)})
+        }
+        TWDBManager.sharedManager.saveContext()
+        return products
     }
 }

@@ -3,7 +3,7 @@
     <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="class">
         <attribute name="cartID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cartItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CartItem" inverseName="cart" inverseEntity="CartItem" syncable="YES"/>
-        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TWCustomer" inverseName="cart" inverseEntity="TWCustomer" syncable="YES"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="cart" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <entity name="CartItem" representedClassName="CartItem" syncable="YES" codeGenerationType="class">
         <attribute name="itemID" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,27 +12,27 @@
         <relationship name="cart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cart" inverseName="cartItems" inverseEntity="Cart" syncable="YES"/>
     </entity>
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
-        <attribute name="categoryID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="catId" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="category" inverseEntity="Product" syncable="YES"/>
     </entity>
-    <entity name="Product" representedClassName="Product" syncable="YES" codeGenerationType="class">
-        <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="productDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="productID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="products" inverseEntity="Category" syncable="YES"/>
-    </entity>
-    <entity name="TWCustomer" representedClassName="TWCustomer" syncable="YES" codeGenerationType="class">
+    <entity name="Customer" representedClassName="Customer" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cart" inverseName="customer" inverseEntity="Cart" syncable="YES"/>
     </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES" codeGenerationType="class">
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="products" inverseEntity="Category" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Cart" positionX="-299" positionY="-90" width="128" height="88"/>
         <element name="CartItem" positionX="-495" positionY="63" width="128" height="103"/>
-        <element name="Category" positionX="-414" positionY="18" width="128" height="90"/>
-        <element name="TWCustomer" positionX="-81" positionY="-9" width="128" height="90"/>
-        <element name="Product" positionX="-747" positionY="-189" width="128" height="120"/>
+        <element name="Category" positionX="-414" positionY="18" width="128" height="30"/>
+        <element name="Product" positionX="-747" positionY="-189" width="128" height="30"/>
+        <element name="Customer" positionX="-81" positionY="-9" width="128" height="30"/>
     </elements>
 </model>
