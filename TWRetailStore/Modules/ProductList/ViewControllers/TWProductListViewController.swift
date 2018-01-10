@@ -10,14 +10,20 @@ import UIKit
 
 class TWProductListViewController: UIViewController {
     let ProductListCellIdentifier = "ProductListCell"
+    let ProductListHeaderIdentifier = "ProductListHeader"
+
     @IBOutlet weak var productListCollectionView: UICollectionView?
     var viewModel: TWProductListViewModel = TWProductListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCollectionViewData()
+
         let cellNib = UINib.init(nibName: String(describing: ProductListCollectionViewCell.self), bundle: nil)
         productListCollectionView?.register(cellNib, forCellWithReuseIdentifier: ProductListCellIdentifier)
+        let headerNib = UINib.init(nibName: String(describing: TWProductlistSectionHeaderView.self), bundle: nil)
+        productListCollectionView?.register(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ProductListHeaderIdentifier)
+
         // Do any additional setup after loading the view.
     }
 
@@ -52,7 +58,7 @@ extension TWProductListViewController: UICollectionViewDelegate {
 
 }
 
-extension TWProductListViewController: UICollectionViewDataSource {
+extension TWProductListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.categories?.count ?? 0
     }
@@ -62,6 +68,22 @@ extension TWProductListViewController: UICollectionViewDataSource {
             return 0
         }
         return prodArray.count
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 40.0)
+    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ProductListHeaderIdentifier, for: indexPath)
+            if let productListHeader = header as? TWProductlistSectionHeaderView,
+                let category = viewModel.categories?[indexPath.section] {
+                productListHeader.titleLabel.text = category.categoryName
+            }
+            return header
+        } else {
+            let footer =  collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer", for: indexPath)
+            return footer
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
