@@ -11,7 +11,6 @@ import UIKit
 class ProductListCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var productImageView: UIImageView?
     @IBOutlet private weak var productNameLabel: UILabel?
-    @IBOutlet private weak var productDescLabel: UILabel?
     @IBOutlet private weak var priceLabel: UILabel?
 
     override func awakeFromNib() {
