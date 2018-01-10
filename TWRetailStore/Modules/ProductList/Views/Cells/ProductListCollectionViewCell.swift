@@ -12,9 +12,12 @@ class ProductListCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var productImageView: UIImageView?
     @IBOutlet private weak var productNameLabel: UILabel?
     @IBOutlet private weak var priceLabel: UILabel?
+    @IBOutlet private weak var bgView: UIView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView?.layer.borderColor = UIColor.lightGray.cgColor
+        bgView?.layer.borderWidth = 1.0
         // Initialization code
     }
 

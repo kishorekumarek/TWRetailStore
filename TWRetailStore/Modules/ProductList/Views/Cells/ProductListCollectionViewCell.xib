@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +23,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="television" translatesAutoresizingMaskIntoConstraints="NO" id="PxD-ss-MH6">
                                 <rect key="frame" x="0.0" y="0.0" width="396" height="344.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7m-IM-wkG">
                                 <rect key="frame" x="8" y="349.5" width="110" height="20.5"/>
@@ -37,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="n7m-IM-wkG" firstAttribute="top" secondItem="PxD-ss-MH6" secondAttribute="bottom" constant="5" id="7dr-QT-UNh"/>
                             <constraint firstItem="KvO-4L-F7M" firstAttribute="top" secondItem="n7m-IM-wkG" secondAttribute="bottom" constant="5" id="OGN-Jm-S1o"/>
@@ -51,7 +52,7 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="9OE-s5-JgW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="54b-vM-Xbz"/>
                 <constraint firstAttribute="bottom" secondItem="9OE-s5-JgW" secondAttribute="bottom" constant="5" id="QvA-o2-vTo"/>
@@ -61,6 +62,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="411" height="406"/>
             <connections>
+                <outlet property="bgView" destination="9OE-s5-JgW" id="q2Z-xq-wgw"/>
                 <outlet property="priceLabel" destination="KvO-4L-F7M" id="w5w-um-Bw5"/>
                 <outlet property="productImageView" destination="PxD-ss-MH6" id="BOP-2K-HmQ"/>
                 <outlet property="productNameLabel" destination="n7m-IM-wkG" id="beE-CA-7L4"/>
